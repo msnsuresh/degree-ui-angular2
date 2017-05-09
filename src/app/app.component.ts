@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
       this.isLoading = true;
-      this.http.post('https://immense-ridge-71816.herokuapp.com/api/actors', JSON.stringify(obj), options)
+      this.http.post('http://localhost:8080/api/getDegree', JSON.stringify(obj), options)
         .map(res => res.json())
         .subscribe((data: Resp) => {
           this.isLoading = false;
